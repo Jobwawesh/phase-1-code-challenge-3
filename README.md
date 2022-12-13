@@ -42,7 +42,7 @@ Job Waweru
 
 ## Contact Information
 If you have any question or contributions, please email me at
-[ jobnjunge15@gmail.com ]
+[jobnjunge15@gmail.com]
 
 ## Lincense
 ISC
