@@ -35,7 +35,7 @@ function movieDetails(films) {
     const filmShowtime = document.getElementById("film-showtime")
     const availabletickets = document.getElementById("available-tickets")
 
-    //The details will be the title,poster, running time and available tickets
+    //The details will be the title, poster, running time, showing time and available tickets
     filmName.textContent= films.title
     filmImg.src= films.poster
     filmDescr.textContent= films.description
