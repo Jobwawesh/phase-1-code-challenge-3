@@ -1,80 +1,54 @@
-let URL = 'http://localhost:3000/films'
-const listHolder = document.getElementById('films')
-document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementsByClassName('film item')[0].remove()
-    fetchMovies(URL)
+document.addEventListener("DOMContentLoaded", (e) => {
+    console.log("The DOM has loaded")
+    showMovie()
+    movieDetails(JSON.parse(filmsObj))
+
 })
-//Fetch function to get the data from the db.json
-function fetchMovies(URL){
-    fetch(URL)
-    .then(resp => resp.json())
-    .then(movies => {
-        movies.forEach(movie => {
-            displayMovie(movie)
-        });
+
+function showMovie() {
+    fetch("http://localhost:3000/films")
+    .then((response)=> response.json())
+    .then((filmsObj=> filmsObj.forEach(films => showMovieNames(films))));
+}
+const filmDetails = document.getElementById("show-description")
+
+
+function showMovieNames(films) {
+    const filmNames = document.createElement("li")
+    filmNames.className= ("film-list")
+    filmNames.textContent= films.title
+    filmDetails.append(filmNames)
+    filmNames.addEventListener("click", function onclick() {
+       movieDetails(films);
     })
+
 }
-//function to display the titles of the movies as a list
-function displayMovie(movie){
-    const list = document.createElement('li')
-    list.style.cursor="pointer"
-    list.textContent= (movie.title)
-    listHolder.appendChild(list)
-    addClickEvent()
+
+function movieDetails(films) {
+    const filmName = document.getElementById("film-name")
+    const filmImg = document.getElementById("film-image")
+    const filmDescr = document.getElementById("film-description")
+    const filmRuntime = document.getElementById("film-runtime")
+    const filmShowtime = document.getElementById("film-showtime")
+    const availabletickets = document.getElementById("available-tickets")
+    filmName.textContent= films.title
+    filmImg.src= films.poster
+    filmDescr.textContent= films.description
+    filmRuntime.textContent=`Runtime: ${films.runtime}minutes`
+    filmShowtime.textContent=`Time: ${films.showtime}`
+    let remaindertickets = films.capacity - films.tickets_sold
+    availabletickets.textContent=`Available tickets: ${remaindertickets}`
+    const filmButton = document.getElementById("ticket-buyer")
+    filmButton.dataset.id = films.id
+
+    filmButton.addEventListener("click", function reduceTickets() {
+        if (remaindertickets>=0) {
+            return availabletickets.textContent =`Available tickets: ${remaindertickets--}`
+        }
+        else if (remaindertickets < 0) {
+            return availabletickets.textcontent=`sold-out`
+        }
+    })
+
+
 }
-//Adding the click event listener
-function addClickEvent(){
-    let children=listHolder.children
-    for(let i=0; i<children.length; i++){
-        let child=children[i]
-        // console.log(child) <= to check if have the right child
-        child.addEventListener('click',() => {
-            fetch(`${URL}/${i+1}`)
-            .then(res => res.json())
-            .then(movie => {
-                document.getElementById('buy-ticket').textContent = 'Buy Ticket'
-                setUpMovieDetails(movie)
-            })
-        })
-    }
-}
-//Posting movie details
-// poster to be dispalyed on the div with poster id
-
-function setUpMovieDetails(funMovie){
-    const preview = document.getElementById('poster')
-    preview.src = funMovie.poster;
-    //title
-
-    const movieTitle = document.querySelector('#title');
-    movieTitle.textContent = funMovie.title;
-    //runtime
-
-    const movieTime = document.querySelector('#runtime');
-    movieTime.textContent = `${funMovie.runtime} minutes`;
-    //description
-
-    const movieDescription = document.querySelector('#film-info');
-    movieDescription.textContent = funMovie.description;
-    //Showtime
-
-    const showTime = document.querySelector('#showtime')
-    showTime.textContent = funMovie.showtime;
-    // available tickets =capacity - tickets sold
-
-    const tickets  = document.querySelector('#ticket-number')
-    tickets.textContent = funMovie.capacity -funMovie.tickets_sold;
-}
-//Sold out
-
-const btn = document.getElementById('buy-ticket')
-btn.addEventListener('click', function(event){
-    const ticketsRemaining = document.querySelector('#ticket-number').textContent
-    event.preventDefault()
-    if(remainingTickets > 0){
-        document.querySelector('#ticket-number').textContent  = ticketsRemaining-1
-    }
-    else if(parseInt(remTickets, 10)===0){
-    btn.textContent = 'Sold Out'
-    }
-})

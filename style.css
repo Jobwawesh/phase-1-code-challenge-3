@@ -1,75 +1,64 @@
+h1{
+  background-color: orange;
+  text-align: center;
+}
+h3{
+  color: aliceblue;
+}
+#main {
+  background-color: rgb(247, 240, 251);
+  background-image: url(./backg.jpg);
+}
 
-body {
-    background-color: ;
-    float: left;
-    display: contents;
-  }
-  .heading {
-    background-color: hsl(102, 56%, 56%);
-    margin-bottom: 20px;
-    padding: 5px 0px 5px 15px;
-  }
-  .title {
-    background-color:;
-    padding: 5px;
-    color: white;
-    text-align: center;
-  }
-  #runtime {
-    background-color:hsl(102, 56%, 56%);
-    color: white ;
-    padding: 10px;
-  }
-  .content {
-    color: white;
-    text-align:center;
-  }
-  #subtitle {
-    color: rgb(3, 4, 94);
-    text-align:center ;
-  }
-  #showing {
-    margin-left: 20px;
-  }
-  .description{
-    padding-bottom: 20px;
-  }
-  #films li::before {
-    content: "";
-  }
-  .film {
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-  .sold-out {
-    color: gray;
-  }
-  img {
-    height: 400px;
-    width: 400px;
-    margin-left: 300px;
-    border: 3px solid rgb(62, 99, 53);
-    border: 2px white solid;
-  }
-  #film-info {
-    padding-bottom: 15px;
-    text-decoration: wavy;
-  }
-  #infobox {
-   font-size: 15px;
-   background-color: black;
-  }
-  #buy-ticket{
-    font-size: 30px;
-    background-color:orange;
-    cursor:cell;
-  }
-  li{
-    font-size: 25px;
-    color: rgb(26, 26, 25);
-  }
-.navbar-brand{
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(53, 171, 173)
+#body-title{
+  text-align: center;
+}
+
+#body-subtitle {
+text-align: center;
+}
+
+#film-container img {
+  flex: 0 1 auto;
+  height: 150px;
+  margin-right: 0.5rem;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(198, 64, 64, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+}
+
+.sidenav {
+height: 100%; 
+width: 300px; 
+position: fixed; 
+z-index: 1; 
+top: 0; 
+left: 0;
+background-color: #111; 
+overflow-x: hidden;
+padding-top: 20px;
+}
+
+.sidenav .film-list {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  cursor: pointer;
+  word-break: break-al;
+}
+
+.sidenav .film-list:hover {
+  color: orange;
+}
+
+button {
+background-color: orange;
+color: black;  
 }

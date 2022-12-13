@@ -1,62 +1,26 @@
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>FLATDANGO</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <!-- Heading -->
-  <div class="heading">
-    <div class="item">
-      <h2 class="ui header">
-        <i class="orange ticket icon"></i>
-        <div class="content">FLATDANGO MOVIE THEATRE</div>
-        <div id="subtitle">BUY TICKETS NOW</div>
-      </h2>
-    </div>
-  </div>
-  <div class="ui centered grid">
-    <div class="four wide column">
-      <div class="list-container">
-        <!-- list og movie to be appended here -->
-        <ul class="ui divided list" id="films">
-          <li class="film item"></li>
-        </ul>
-      </div>
-    </div>
-    <!-- image -->
-    <div class="four wide column">
-      <img
-        id="poster"
-        src="https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
-        alt="[MOVIE POSTER]"
-      />
-    </div>
-    <!-- movie details -->
-    <section id="infobox">
-      <div class="four wide column">
-        <div class="ui cards" id="showing">
-          <div class="card">
-            <div id="title" class="title"></div>
-            <div id="runtime" class="meta">[--] minutes</div>
-            <div class="content">
-              <div class="description">
-                <div id="film-info"></div>
-                <span id="showtime" class="ui label">[SHOWTIME]</span>
-                <span id="ticket-number">[--]</span> remaining tickets
-              </div>
-            </div>
-            <!-- Buying ticket -->
-            <div class="extra content">
-              <button id="buy-ticket" class="ui orange button">
-                BUY TICKET
-              </button>
-            </div>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UFT-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flatdango</title>
+        <link rel="stylesheet" type="text/css" href="./style.css">
+    </head>
+    <body id ="main">
+        <h1 id="body-title">FLATDANGO</h1>
+        <h3 id="body-subtitle">The theatre of dreams!!!</h3>
+        <div id="show-description" class ="sidenav">
         </div>
-      </div>
-    </section>
-  </div>
-  <script src="./index.js"></script>
-</body>
+        <div id="film-container" class="card">
+          <h1 id="film-name">Now Showing</h1>
+          <img id="film-image" src="">
+          <p id="film-description"></p>
+          <h2 id="film-runtime"></h2>
+          <h2 id="film-showtime"></h2>
+          <h2 id="available-tickets"></h2>
+          <button id="ticket-buyer">Buy Ticket</button>
+        </div>
+
+        <script src="./index.js"></script>
+    </body>
 </html>
