@@ -2,6 +2,7 @@
 body {
     background-color: ;
     float: left;
+    display: contents;
   }
   .heading {
     background-color: hsl(102, 56%, 56%);
@@ -9,13 +10,13 @@ body {
     padding: 5px 0px 5px 15px;
   }
   .title {
-    background-color: #098a6e;
+    background-color:;
     padding: 5px;
     color: white;
     text-align: center;
   }
   #runtime {
-    background-color:rgb(12, 102, 70);
+    background-color:hsl(102, 56%, 56%);
     color: white ;
     padding: 10px;
   }

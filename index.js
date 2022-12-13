@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementsByClassName('film item')[0].remove()
     fetchMovies(URL)
 })
-//Create fetch function to get the data from the db.json
+//Fetch function to get the data from the db.json
 function fetchMovies(URL){
     fetch(URL)
     .then(resp => resp.json())
@@ -65,14 +65,14 @@ function setUpMovieDetails(funMovie){
     const tickets  = document.querySelector('#ticket-number')
     tickets.textContent = funMovie.capacity -funMovie.tickets_sold;
 }
-// //Sold out
+//Sold out
 
 const btn = document.getElementById('buy-ticket')
 btn.addEventListener('click', function(event){
-    let remainingTickets = document.querySelector('#ticket-number').textContent
+    const ticketsRemaining = document.querySelector('#ticket-number').textContent
     event.preventDefault()
     if(remainingTickets > 0){
-        document.querySelector('#ticket-number').textContent  = remainingTickets-1
+        document.querySelector('#ticket-number').textContent  = ticketsRemaining-1
     }
     else if(parseInt(remTickets, 10)===0){
     btn.textContent = 'Sold Out'
