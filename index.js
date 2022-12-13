@@ -44,7 +44,7 @@ function addClickEvent(){
 function setUpMovieDetails(funMovie){
     const preview = document.getElementById('poster')
     preview.src = funMovie.poster;
-//title
+    //title
 
     const movieTitle = document.querySelector('#title');
     movieTitle.textContent = funMovie.title;
