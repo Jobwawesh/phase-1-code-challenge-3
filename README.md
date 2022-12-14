@@ -5,6 +5,12 @@ PHASE 1 WEEK 3 CODE CHALLENGE
 WELCOME TO FLATDANGO
 Flatdango is an application that allows a user to purchase movie tickets from the theater. You will see if the tickets aren available and the running time.
 
+## Screenshot
+This is how the app looks like when it is up and running:
+
+<img src="Screenshot.png" height="75" width="75" >
+
+
 ## Development Requirements
 - Visual StudioCode.
 - Live server extension.

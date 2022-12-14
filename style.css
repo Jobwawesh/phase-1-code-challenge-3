@@ -33,6 +33,10 @@ text-align: center;
   text-align: center;
   background-color: white;
 }
+#film-image{
+  height: 75;
+  width: 75;
+}
 
 .sidenav {
 height: 100%; 

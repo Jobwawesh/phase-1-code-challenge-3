@@ -41,6 +41,8 @@ function movieDetails(films) {
     filmDescr.textContent= films.description
     filmRuntime.textContent=`Runtime: ${films.runtime}minutes`
     filmShowtime.textContent=`Time: ${films.showtime}`
+
+    //We will subtract the number of tickets to the tickets sold to display how many tickets remain after purchase
     let remaindertickets = films.capacity - films.tickets_sold
     availabletickets.textContent=`Available tickets: ${remaindertickets}`
     const filmButton = document.getElementById("ticket-buyer")
