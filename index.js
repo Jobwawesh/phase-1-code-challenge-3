@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
 })
 //A fetch function that will enable the movie list to load from db json
 function showMovie() {
-    fetch("http://localhost:3000/films")
+    fetch("https://phase-1-code-challenge-3.vercel.app/db.json")
     .then((response)=> response.json())
-    .then((filmsObj=> filmsObj.forEach(films => showMovieNames(films))));
+    .then((filmsObj=> filmsObj.films.forEach(films => showMovieNames(films))));
 }
 const filmDetails = document.getElementById("show-description")
 
