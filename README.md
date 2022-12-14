@@ -8,7 +8,7 @@ Flatdango is an application that allows a user to purchase movie tickets from th
 ## Screenshot
 This is how the app looks like when it is up and running:
 
-<img src="Screenshot.png" height="75" width="75" >
+<img src="Screenshot.png" height="75%" width="100%" >
 
 
 ## Development Requirements
